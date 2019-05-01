@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://ns.adobe.com/sensei/content/content",
+  "title": "Sensei Content",
+  "definitions": {
+    "contentref": {
+      "type": "object",
+      "properties": {
+        "repo:path": {
+          "type": "string"
+        },
+        "repo:etag": {
+          "type": "string"
+        },
+        "repo:id": {
+          "type": "string"
+        },
+        "repo:version": {
+          "type": "string"
+        },
+        "dc:format": {
+          "type": "string"
+        },
+        "sensei:presignedUrl": {
+          "type": "string"
+        },
+        "sensei:url": {
+          "type": "string"
+        },
+        "sensei:repoType": {
+          "type": "string",
+          "enum": [
+            "S3",
+            "Platform ACP",
+            "AzureBlob",
+            "CCRepo",
+            "DCRepo",
+            "AEMRepo",
+            "SearchContentRepo"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "required": [
+            "sensei:repoType"
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "repo:path"
+              ]
+            },
+            {
+              "required": [
+                "repo:id"
+              ]
+            },
+            {
+              "required": [
+                "sensei:presignedUrl"
+              ]
+            },
+            {
+              "required": [
+                "sensei:url"
+              ]
+            }
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "contentblob": {
+      "type": "object",
+      "properties": {
+        "sensei:blob": {
+          "type": "string",
+          "description": "Can be base64 encoded"
+        },
+        "sensei:multipart_field_name": {
+          "type": "string",
+          "title": "multipart form field name which contains bytes"
+        },
+        "dc:format": {
+          "type": "string",
+          "description": "valid media type"
+        },
+        "sensei:encoding": {
+          "type": "string",
+          "description": "if sensei:blob is encoded, specify encoding schema",
+          "examples": [
+            "base64"
+          ]
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "sensei:blob"
+          ]
+        },
+        {
+          "required": [
+            "sensei:multipart_field_name"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/contentref"
+    },
+    {
+      "$ref": "#/definitions/contentblob"
+    }
+  ]
+}
