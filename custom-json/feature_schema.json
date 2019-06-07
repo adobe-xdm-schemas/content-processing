@@ -27,6 +27,9 @@
             },
             {
               "type": "boolean"
+            },
+            {
+              "type": "object"
             }
           ]
         }
@@ -51,7 +54,8 @@
                   "string",
                   "number",
                   "integer",
-                  "boolean"
+                  "boolean",
+                  "object"
                 ]
               },
               {
