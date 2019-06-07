@@ -1,0 +1,327 @@
+{
+  "$id": "http://ns.sensei.adobe.com/schemas/content/v2/annotation",
+  "type": "object",
+  "definitions": {
+    "position": {
+      "type": "object",
+      "properties": {
+        "begins": {
+          "$id": "/properties/annotations/items/properties/location/properties/position/properties/begins",
+          "type": "integer",
+          "title": "The Begins Schema ",
+          "default": 0,
+          "examples": [
+            10
+          ]
+        },
+        "ends": {
+          "$id": "/properties/annotations/items/properties/location/properties/position/properties/ends",
+          "type": "integer",
+          "title": "The Ends Schema ",
+          "default": 0,
+          "examples": [
+            25
+          ]
+        },
+        "ordinal": {
+          "$id": "/properties/annotations/items/properties/location/properties/position/properties/ordinal",
+          "type": "integer",
+          "title": "The Ordinal Schema ",
+          "default": 0,
+          "examples": [
+            2
+          ]
+        }
+      },
+      "required": [
+        "begins",
+        "ends",
+        "ordinal"
+      ]
+    },
+    "temporal": {
+      "$id": "/properties/annotations/items/properties/location/properties/temporal",
+      "type": "object",
+      "properties": {
+        "frameNumber": {
+          "$id": "/properties/annotations/items/properties/location/properties/temporal/properties/frame_number",
+          "type": "integer",
+          "title": "The Frame_number Schema ",
+          "default": 0,
+          "examples": [
+            234
+          ]
+        },
+        "startTime": {
+          "$id": "/properties/annotations/items/properties/location/properties/temporal/properties/time_start",
+          "type": "number",
+          "title": "The Time_start Schema. Unix epoch number ",
+          "default": "",
+          "examples": [
+            "2:12.3"
+          ]
+        },
+        "endTime": {
+          "$id": "/properties/annotations/items/properties/location/properties/temporal/properties/time_end",
+          "type": "number",
+          "title": "The Time_end Schema Unix epoch number ",
+          "default": "",
+          "examples": [
+            "2:19.2"
+          ]
+        }
+      },
+      "required": [
+        "frameNumber",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "polygon": {
+      "$id": "#/properties/polygon",
+      "type": "object",
+      "title": "The Polygon Schema",
+      "required": [
+        "coordList"
+      ],
+      "properties": {
+        "coordList": {
+          "$id": "#/properties/polygon/properties/coordList",
+          "type": "array",
+          "title": "The Coordlist Schema",
+          "items": {
+            "$id": "#/properties/polygon/properties/coordList/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "x",
+              "y"
+            ],
+            "properties": {
+              "x": {
+                "$id": "#/properties/polygon/properties/coordList/items/properties/x",
+                "type": "number",
+                "title": "The X Schema",
+                "default": 0,
+                "examples": [
+                  34.5
+                ]
+              },
+              "y": {
+                "$id": "#/properties/polygon/properties/coordList/items/properties/y",
+                "type": "number",
+                "title": "The Y Schema",
+                "default": 0,
+                "examples": [
+                  23.5
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "#/definitions/position"
+        },
+        "temporal": {
+          "$ref": "#/definitions/temporal"
+        },
+        "polygon": {
+          "$ref": "#/definitions/polygon"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "position"
+          ]
+        },
+        {
+          "required": [
+            "temporal"
+          ]
+        },
+        {
+          "required": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    "meta_info": {
+      "$id": "/properties/annotations/items/properties/meta-info",
+      "type": "object"
+    },
+    "feature_simple": {
+      "type": "object",
+      "required": [
+        "feature_name",
+        "feature_value"
+      ],
+      "properties": {
+        "feature_name": {
+          "type": "string",
+          "title": "The Feature_name Schema ",
+          "default": ""
+        },
+        "feature_value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "feature_array": {
+      "type": "object",
+      "required": [
+        "feature_name",
+        "feature_value"
+      ],
+      "properties": {
+        "feature_name": {
+          "type": "string"
+        },
+        "feature_value": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": [
+                  "string",
+                  "number",
+                  "integer",
+                  "boolean"
+                ]
+              },
+              {
+                "$ref": "#/definitions/feature_simple"
+              },
+              {
+                "$ref": "#/definitions/feature_array"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "feature_core": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/feature_simple"
+        },
+        {
+          "$ref": "#/definitions/feature_array"
+        }
+      ]
+    },
+    "classification_entry": {
+      "type": "object",
+      "properties": {
+        "class_label": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "title": "The Score Schema ",
+          "default": 0,
+          "examples": [
+            0.44999998807907104
+          ]
+        },
+        "meta_info": {
+          "type": "object"
+        }
+      }
+    },
+    "classifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "classification_entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/classification_entry"
+            }
+          }
+        }
+      }
+    },
+    "annotation_entry": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "$ref": "#/definitions/location"
+        },
+        "classifications": {
+          "$ref": "#/definitions/classifications"
+        },
+        "features": {
+          "type": "array",
+      	  "items": {
+             "$ref": "#/definitions/feature_core"
+           }
+        },
+        "meta_info": {
+          "$ref": "#/definitions/meta_info"
+        }
+      },
+      "allOf": [
+        {
+          "required": [
+            "location"
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "classifications"
+              ]
+            },
+            {
+              "required": [
+                "features"
+              ]
+            },
+            {
+              "required": [
+                "meta_info"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/annotation_entry"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "annotations": {
+      "$ref": "#/definitions/annotations"
+    }
+  },
+  "required": [
+    "annotations"
+  ]
+}
