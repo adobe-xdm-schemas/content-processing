@@ -13,9 +13,7 @@
       "title": "The Class_info Schema",
       "description": "An explanation about the purpose of this instance.",
       "required": [
-        "class_name",
-        "class_labels",
-        "exclusive_class_labels"
+        "class_name"
       ],
       "properties": {
         "class_name": {
