@@ -1,0 +1,90 @@
+{
+	"id": "http://ns.sensei.adobe.com/schemas/content/v2/classification",
+	"type": "object",
+	"properties": {
+		"classifications": {
+			"$ref": "#/definitions/classifications_array"
+		}
+	},
+	"required": ["classifications"],
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"definitions": {
+		"class_info": {
+			"description": "An explanation about the purpose of this instance.",
+			"type": "object",
+			"title": "The Class_info Schema",
+			"required": ["class_name"],
+			"properties": {
+				"class_labels": {
+					"description": "An explanation about the purpose of this instance.",
+					"type": "array",
+					"title": "The Class-labels Schema",
+					"items": {
+						"$ref": "#/definitions/labels"
+					}
+				},
+				"exclusive_class_labels": {
+					"description": "An explanation about the purpose of this instance.",
+					"type": "array",
+					"items": {
+						"type": "array",
+						"title": "The Items Schema",
+						"items": {
+							"default": "",
+							"type": "string",
+							"title": "The Items Schema"
+						}
+					}
+				},
+				"class_name": {
+					"default": "",
+					"description": "An explanation about the purpose of this instance.",
+					"type": "string",
+					"title": "The Class_name Schema"
+				}
+			}
+		},
+		"classification_entry": {
+			"type": "object",
+			"required": ["class_label"],
+			"properties": {
+				"score": {
+					"default": 0,
+					"examples": [0.44999998807907104],
+					"type": "number",
+					"title": "The Score Schema "
+				},
+				"class_label": {
+					"type": "string"
+				},
+				"meta_info": {
+					"type": "object"
+				}
+			}
+		},
+		"classification": {
+			"type": "string"
+		},
+		"classifications_array": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["classification_entries"],
+				"properties": {
+					"classification_entries": {
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/classification_entry"
+						}
+					},
+					"class_info": {
+						"$ref": "#/definitions/class_info"
+					}
+				}
+			}
+		},
+		"labels": {
+			"type": "string"
+		}
+	}
+}
