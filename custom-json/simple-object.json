@@ -1,0 +1,14 @@
+{
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "http://example.com/example.json",
+        "type": "object",
+        "title": "Object",
+        "description": "A simple object schema",
+        "default": {},
+        "examples": [
+          {}
+        ],
+        "required": [],
+        "additionalProperties": true,
+        "properties": {}
+      }
