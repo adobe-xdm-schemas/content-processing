@@ -1,147 +1,148 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"type": "object",
-	"properties": {
-		"rendition": {
-			"anyOf": [{
-					"type": "object",
-					"properties": {
-						"rendition_mimetype": {
-							"type": "string",
-							"enum": [
-								"image/png",
-								"image/jpg",
-								"image/webp",
-								"application/pdf",
-								"image/svg"
-							]
-						},
-						"rendition_scale": {
-							"type": "number",
-							"minimum": 0.25,
-							"maximum": 3
-						},
-						"rendition_size": {
-							"type": "number"
-						},
-						"rendition_quality": {
-							"type": "integer",
-							"minimum": 50,
-							"maximum": 100
-						},
-						"resource_fragment": {
-							"type": "object",
-							"properties": {
-								"artboardID": {
-									"type": "string"
-								},
-								"layerID": {
-									"type": "string"
-								}
-							},
-							"additionalProperties": false,
-							"required": [
-								"artboardID"
-							]
-						}
-					},
-					"additionalProperties": false,
-					"required": [
-						"resource_fragment"
-					]
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"rendition_mimetype": {
-								"type": "string",
-								"enum": [
-									"image/png",
-									"image/jpg",
-									"image/webp",
-									"application/pdf",
-									"image/svg"
-								]
-							},
-							"rendition_scale": {
-								"type": "number",
-								"minimum": 0.25,
-								"maximum": 3
-							},
-							"rendition_size": {
-								"type": "number"
-							},
-							"rendition_quality": {
-								"type": "integer",
-								"minimum": 50,
-								"maximum": 100
-							},
-							"resource_fragment": {
-								"type": "object",
-								"properties": {
-									"artboardID": {
-										"type": "string"
-									},
-									"layerID": {
-										"type": "string"
-									}
-								},
-								"additionalProperties": false,
-								"required": [
-									"artboardID"
-								]
-							}
-						},
-						"additionalProperties": false,
-						"required": [
-							"resource_fragment"
-						]
-					}
-				}
-			]
-		},
-		"asset": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name-suffix": {
-						"type": "string"
-					},
-					"scale": {
-						"type": "number",
-						"minimum": 0.25,
-						"maximum": 4
-					},
-					"mime": {
-						"type": "string",
-						"enum": [
-							"image/png",
-							"image/jpg",
-							"image/webp",
-							"image.bmp",
-							"application/pdf"
-						]
-					},
-					"size": {
-						"type": "number"
-					},
-					"quality": {
-						"type": "integer",
-						"minimum": 50,
-						"maximum": 100
-					}
-				},
-				"additionalProperties": false,
-				"required": [
-					"name-suffix",
-					"mime"
-				]
-			}
-		}
-	},
-	"additionalProperties": false,
-	"required": []
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "rendition": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "rendition_mimetype": {
+                            "type": "string",
+                            "enum": [
+                                "image/png",
+                                "image/jpg",
+                                "image/webp",
+                                "application/pdf",
+                                "image/svg"
+                            ]
+                        },
+                        "rendition_scale": {
+                            "type": "number",
+                            "minimum": 0.25,
+                            "maximum": 3
+                        },
+                        "rendition_size": {
+                            "type": "number"
+                        },
+                        "rendition_quality": {
+                            "type": "integer",
+                            "minimum": 50,
+                            "maximum": 100
+                        },
+                        "resource_fragment": {
+                            "type": "object",
+                            "properties": {
+                                "artboardID": {
+                                    "type": "string"
+                                },
+                                "layerID": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "artboardID"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "resource_fragment"
+                    ]
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "rendition_mimetype": {
+                                "type": "string",
+                                "enum": [
+                                    "image/png",
+                                    "image/jpg",
+                                    "image/webp",
+                                    "application/pdf",
+                                    "image/svg"
+                                ]
+                            },
+                            "rendition_scale": {
+                                "type": "number",
+                                "minimum": 0.25,
+                                "maximum": 3
+                            },
+                            "rendition_size": {
+                                "type": "number"
+                            },
+                            "rendition_quality": {
+                                "type": "integer",
+                                "minimum": 50,
+                                "maximum": 100
+                            },
+                            "resource_fragment": {
+                                "type": "object",
+                                "properties": {
+                                    "artboardID": {
+                                        "type": "string"
+                                    },
+                                    "layerID": {
+                                        "type": "string"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "artboardID"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "resource_fragment"
+                        ]
+                    }
+                }
+            ]
+        },
+        "asset": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name-suffix": {
+                        "type": "string"
+                    },
+                    "scale": {
+                        "type": "number",
+                        "minimum": 0.25,
+                        "maximum": 4
+                    },
+                    "mime": {
+                        "type": "string",
+                        "enum": [
+                            "image/png",
+                            "image/jpg",
+                            "image/webp",
+                            "image.bmp",
+                            "application/pdf"
+                        ]
+                    },
+                    "size": {
+                        "type": "number"
+                    },
+                    "quality": {
+                        "type": "integer",
+                        "minimum": 50,
+                        "maximum": 100
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name-suffix",
+                    "mime"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": []
 }
