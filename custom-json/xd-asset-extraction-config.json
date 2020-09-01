@@ -133,7 +133,7 @@
                         "type": "integer",
                         "minimum": 50,
                         "maximum": 100
-                    },
+                    }
                 },
                 "additionalProperties": false,
                 "required": [
