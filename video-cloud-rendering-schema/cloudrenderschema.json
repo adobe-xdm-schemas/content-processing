@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "number"
+    },
+    "projectInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "projectFileType": {
+          "type": "string"
+        },
+        "projectFileName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "projectFileType",
+        "projectFileName"
+      ]
+    },
+    "sequenceInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "integer"
+        },
+        "endTime": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "inputFonts": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "type"
+          ]
+        }
+      ]
+    },
+    "presetInfo": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "key1": {
+              "type": "string"
+            },
+            "key2": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "key1",
+            "key2"
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "name",
+        "type",
+        "properties"
+      ]
+    },
+    "outputFileName": {
+      "type": "string"
+    },
+    "clientSession": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string"
+        },
+        "appVersion": {
+          "type": "number"
+        },
+        "build_no": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app",
+        "appVersion",
+        "build_no",
+        "platform"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "projectInfo",
+    "sequenceInfo",
+    "inputFonts",
+    "presetInfo",
+    "outputFileName",
+    "clientSession"
+  ]
+}
