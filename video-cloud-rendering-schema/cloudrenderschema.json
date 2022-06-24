@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "version": {
-      "type": "number"
+      "type": "integer"
     },
     "projectInfo": {
       "type": "object",
@@ -11,17 +11,32 @@
         "id": {
           "type": "string"
         },
-        "projectFileType": {
+        "fileType": {
           "type": "string"
         },
-        "projectFileName": {
+        "fileName": {
           "type": "string"
         }
       },
       "required": [
         "id",
-        "projectFileType",
-        "projectFileName"
+        "fileType",
+        "fileName"
+      ]
+    },
+    "storageInfo": {
+      "type": "object",
+      "properties": {
+        "projectId": {
+          "type": "string"
+        },
+        "teamId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectId",
+        "teamId"
       ]
     },
     "sequenceInfo": {
@@ -71,7 +86,7 @@
       "type": "object",
       "properties": {
         "version": {
-          "type": "number"
+          "type": "integer"
         },
         "name": {
           "type": "string"
@@ -102,7 +117,7 @@
         "properties"
       ]
     },
-    "outputFileName": {
+    "outputFilePath": {
       "type": "string"
     },
     "clientSession": {
@@ -112,9 +127,9 @@
           "type": "string"
         },
         "appVersion": {
-          "type": "number"
+          "type": "string"
         },
-        "build_no": {
+        "buildNo": {
           "type": "string"
         },
         "platform": {
@@ -124,7 +139,7 @@
       "required": [
         "app",
         "appVersion",
-        "build_no",
+        "buildNo",
         "platform"
       ]
     }
@@ -132,10 +147,11 @@
   "required": [
     "version",
     "projectInfo",
+    "storageInfo",
     "sequenceInfo",
     "inputFonts",
     "presetInfo",
-    "outputFileName",
+    "outputFilePath",
     "clientSession"
   ]
 }
