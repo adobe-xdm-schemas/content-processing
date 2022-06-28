@@ -39,6 +39,22 @@
         "teamId"
       ]
     },
+    "mediaInfo": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "relativePath": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "relativePath"
+          ]
+        }
+      ]
+    },
     "sequenceInfo": {
       "type": "object",
       "properties": {
