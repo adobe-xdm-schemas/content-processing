@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "version": {
-      "type": "number"
+      "type": "integer"
     },
     "projectInfo": {
       "type": "object",
@@ -11,17 +11,48 @@
         "id": {
           "type": "string"
         },
-        "projectFileType": {
+        "fileType": {
           "type": "string"
         },
-        "projectFileName": {
+        "fileName": {
           "type": "string"
         }
       },
       "required": [
         "id",
-        "projectFileType",
-        "projectFileName"
+        "fileType",
+        "fileName"
+      ]
+    },
+    "storageInfo": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "containerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "containerId"
+      ]
+    },
+    "mediaInfo": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "relativePath": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "relativePath"
+          ]
+        }
       ]
     },
     "sequenceInfo": {
@@ -71,7 +102,7 @@
       "type": "object",
       "properties": {
         "version": {
-          "type": "number"
+          "type": "integer"
         },
         "name": {
           "type": "string"
@@ -88,21 +119,17 @@
             "key2": {
               "type": "string"
             }
-          },
-          "required": [
-            "key1",
-            "key2"
-          ]
+          }
+         
         }
       },
       "required": [
         "version",
         "name",
-        "type",
-        "properties"
+        "type"
       ]
     },
-    "outputFileName": {
+    "outputFilePath": {
       "type": "string"
     },
     "clientSession": {
@@ -112,9 +139,9 @@
           "type": "string"
         },
         "appVersion": {
-          "type": "number"
+          "type": "string"
         },
-        "build_no": {
+        "buildNo": {
           "type": "string"
         },
         "platform": {
@@ -124,7 +151,7 @@
       "required": [
         "app",
         "appVersion",
-        "build_no",
+        "buildNo",
         "platform"
       ]
     }
@@ -132,10 +159,10 @@
   "required": [
     "version",
     "projectInfo",
+    "storageInfo",
     "sequenceInfo",
-    "inputFonts",
     "presetInfo",
-    "outputFileName",
+    "outputFilePath",
     "clientSession"
   ]
 }
