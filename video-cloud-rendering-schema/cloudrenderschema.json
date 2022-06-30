@@ -27,16 +27,16 @@
     "storageInfo": {
       "type": "object",
       "properties": {
-        "projectId": {
+        "type": {
           "type": "string"
         },
-        "teamId": {
+        "containerId": {
           "type": "string"
         }
       },
       "required": [
-        "projectId",
-        "teamId"
+        "type",
+        "containerId"
       ]
     },
     "mediaInfo": {
@@ -119,18 +119,14 @@
             "key2": {
               "type": "string"
             }
-          },
-          "required": [
-            "key1",
-            "key2"
-          ]
+          }
+         
         }
       },
       "required": [
         "version",
         "name",
-        "type",
-        "properties"
+        "type"
       ]
     },
     "outputFilePath": {
@@ -165,7 +161,6 @@
     "projectInfo",
     "storageInfo",
     "sequenceInfo",
-    "inputFonts",
     "presetInfo",
     "outputFilePath",
     "clientSession"
