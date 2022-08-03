@@ -66,6 +66,12 @@
         },
         "endTime": {
           "type": "number"
+        },
+        "isSplit": {
+          "type": "boolean"
+        },
+        "splitOrder": {
+          "type": "integer"
         }
       },
       "required": [

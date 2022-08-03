@@ -7,6 +7,9 @@
     },
     "status": {
       "type": "string"
+    },
+    "renderOrder": {
+      "type": "integer"
     }
   },
   "required": [
