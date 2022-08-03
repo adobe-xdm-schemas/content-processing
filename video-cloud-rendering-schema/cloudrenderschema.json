@@ -132,7 +132,7 @@
     "outputFilePath": {
       "type": "string"
     },
-    "isPluginInstalled": {
+    "isPluginUsed": {
        "type": "boolean"
     },
     "clientSession": {
