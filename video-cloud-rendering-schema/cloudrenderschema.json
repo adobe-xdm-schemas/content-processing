@@ -62,10 +62,10 @@
           "type": "string"
         },
         "startTime": {
-          "type": "integer"
+          "type": "number"
         },
         "endTime": {
-          "type": "integer"
+          "type": "number"
         }
       },
       "required": [
