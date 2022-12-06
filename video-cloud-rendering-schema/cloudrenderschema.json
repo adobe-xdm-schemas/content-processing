@@ -45,6 +45,9 @@
         {
           "type": "object",
           "properties": {
+            "frameIOAssetId": {
+              "type": "string"
+            },
             "relativePath": {
               "type": "string"
             }
