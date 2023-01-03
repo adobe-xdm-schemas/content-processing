@@ -168,12 +168,10 @@
     }
   },
   "required": [
-    "version",
     "projectInfo",
     "storageInfo",
     "sequenceInfo",
     "presetInfo",
-    "outputFilePath",
-    "clientSession"
+    "outputFilePath"
   ]
 }
