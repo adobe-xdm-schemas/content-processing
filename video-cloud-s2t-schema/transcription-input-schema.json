@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/TranscriptionEngineInputSchema",
+  "definitions": {
+    "TranscriptionEngineInputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "integer"
+        },
+        "input_config": {
+          "$ref": "#/definitions/InputConfig"
+        },
+        "transcriptionConfig": {
+          "$ref": "#/definitions/TranscriptionConfig"
+        },
+        "outputConfig": {
+          "$ref": "#/definitions/OutputConfig"
+        }
+      },
+      "required": [
+        "input_config",
+        "outputConfig",
+        "transcriptionConfig",
+        "version"
+      ],
+      "title": "Welcome9"
+    },
+    "InputConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "url"
+      ],
+      "title": "InputConfig"
+    },
+    "OutputConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requiredFormats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RequiredFormat"
+          }
+        }
+      },
+      "required": [
+        "requiredFormats"
+      ],
+      "title": "OutputConfig"
+    },
+    "RequiredFormat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "config",
+        "format"
+      ],
+      "title": "RequiredFormat"
+    },
+    "Config": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "locationType": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "location_type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "title": "Config"
+    },
+    "TranscriptionConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "profanity": {
+          "type": "string"
+        },
+        "diarization": {
+          "type": "string"
+        },
+        "speakerSensitivity": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "diarization",
+        "language",
+        "profanity",
+        "speakerSensitivity"
+      ],
+      "title": "TranscriptionConfig"
+    }
+  }
+}

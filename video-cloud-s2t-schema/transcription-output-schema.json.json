@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/TranscriptionEngineOutputSchema",
+  "definitions": {
+    "TranscriptionEngineOutputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "jobProgress": {
+          "$ref": "#/definitions/JobProgress"
+        },
+        "jobStatus": {
+          "type": "string"
+        },
+        "fileConfigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileConfig"
+          }
+        }
+      },
+      "required": [
+        "fileConfigs",
+        "jobProgress",
+        "jobStatus"
+      ],
+      "title": "Welcome4"
+    },
+    "FileConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "locationType": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "format",
+        "location",
+        "locationType"
+      ],
+      "title": "FileConfig"
+    },
+    "JobProgress": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "JobProgress"
+    }
+  }
+}
