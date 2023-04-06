@@ -27,16 +27,16 @@
     "storageInfo": {
       "type": "object",
       "properties": {
-        "projectId": {
+        "type": {
           "type": "string"
         },
-        "teamId": {
+        "containerId": {
           "type": "string"
         }
       },
       "required": [
-        "projectId",
-        "teamId"
+        "type",
+        "containerId"
       ]
     },
     "mediaInfo": {
@@ -65,9 +65,15 @@
           "type": "string"
         },
         "startTime": {
-          "type": "integer"
+          "type": "number"
         },
         "endTime": {
+          "type": "number"
+        },
+        "isSplit": {
+          "type": "boolean"
+        },
+        "splitOrder": {
           "type": "integer"
         }
       },
@@ -122,22 +128,20 @@
             "key2": {
               "type": "string"
             }
-          },
-          "required": [
-            "key1",
-            "key2"
-          ]
+          }
         }
       },
       "required": [
         "version",
         "name",
-        "type",
-        "properties"
+        "type"
       ]
     },
     "outputFilePath": {
       "type": "string"
+    },
+    "isPluginUsed": {
+      "type": "boolean"
     },
     "clientSession": {
       "type": "object",
@@ -164,13 +168,10 @@
     }
   },
   "required": [
-    "version",
     "projectInfo",
     "storageInfo",
     "sequenceInfo",
-    "inputFonts",
     "presetInfo",
-    "outputFilePath",
-    "clientSession"
+    "outputFilePath"
   ]
 }
