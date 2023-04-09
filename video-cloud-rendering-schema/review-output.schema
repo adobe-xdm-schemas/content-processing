@@ -1,12 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
+  "type": ["object", "null"],
   "properties": {
     "status": {
       "type": "string"
     }
   },
   "required": [
-    "status"
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "sensei:inputs": {
+    "reviewPayload": {
+      "description": "Review Input",
+      "sensei:schema": "https://raw.githubusercontent.com/arajpurohit-adb/content-processing/e910b96f7dde9e55967edeab6c40844c4aa0a413/video-cloud-rendering-schema/review-input.schema",
+      "sensei:type": "sensei:scalar",
+      "sensei:accepted_media_types": [
+        "application/json"
+      ]
+    }
+  },
+  "sensei:outputs": {
+    "reviewResult": {
+      "description": "Review Output",
+      "sensei:schema": "https://raw.githubusercontent.com/arajpurohit-adb/content-processing/e910b96f7dde9e55967edeab6c40844c4aa0a413/video-cloud-rendering-schema/review-output.schema",
+      "sensei:type": "sensei:scalar",
+      "sensei:generated_media_types": [
+        "application/json"
+      ]
+    }
+  }
+}
