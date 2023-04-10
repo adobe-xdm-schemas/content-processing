@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome6",
+  "$ref": "#/definitions/Welcome4",
   "definitions": {
-    "Welcome6": {
+    "Welcome4": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -24,7 +24,7 @@
         "jobProgress",
         "jobStatus"
       ],
-      "title": "Welcome6"
+      "title": "Welcome4"
     },
     "FileConfig": {
       "type": "object",
