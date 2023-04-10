@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/TranscriptionEngineInputSchema",
+  "$ref": "#/definitions/Welcome10",
   "definitions": {
-    "TranscriptionEngineInputSchema": {
+    "Welcome10": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -25,7 +25,7 @@
         "transcriptionConfig",
         "version"
       ],
-      "title": "Welcome9"
+      "title": "Welcome10"
     },
     "InputConfig": {
       "type": "object",
@@ -64,6 +64,9 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "type": {
+          "type": "string"
+        },
         "format": {
           "type": "string"
         },
@@ -73,7 +76,8 @@
       },
       "required": [
         "config",
-        "format"
+        "format",
+        "type"
       ],
       "title": "RequiredFormat"
     },

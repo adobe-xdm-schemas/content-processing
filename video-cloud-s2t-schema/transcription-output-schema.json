@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/TranscriptionEngineOutputSchema",
+  "$ref": "#/definitions/Welcome6",
   "definitions": {
-    "TranscriptionEngineOutputSchema": {
+    "Welcome6": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -24,16 +24,16 @@
         "jobProgress",
         "jobStatus"
       ],
-      "title": "Welcome4"
+      "title": "Welcome6"
     },
     "FileConfig": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "format": {
+        "type": {
           "type": "string"
         },
-        "locationType": {
+        "format": {
           "type": "string"
         },
         "location": {
@@ -43,7 +43,7 @@
       "required": [
         "format",
         "location",
-        "locationType"
+        "type"
       ],
       "title": "FileConfig"
     },

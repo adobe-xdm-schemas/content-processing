@@ -2,7 +2,7 @@
   "sensei:inputs": {
     "payload": {
       "description": "Transcript Job Input",
-      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/s2t_engine_spec/video-cloud-s2t-schema/transcription-input-schema.json",
+      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/f01217fe584e24d767826efc211a46890861564c/video-cloud-s2t-schema/transcription-input-schema.json",
       "sensei:type": "sensei:scalar",
       "sensei:accepted_media_types": [
         "application/json"
@@ -12,7 +12,7 @@
   "sensei:outputs": {
     "payload": {
       "description": "Transcript Job Output",
-      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/s2t_engine_spec/video-cloud-s2t-schema/transcription-output-schema.json",
+      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/f01217fe584e24d767826efc211a46890861564c/video-cloud-s2t-schema/transcription-input-schema.json",
       "sensei:type": "sensei:scalar",
       "sensei:generated_media_types": [
         "application/json"
