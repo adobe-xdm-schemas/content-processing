@@ -9,7 +9,7 @@
         "version": {
           "type": "integer"
         },
-        "input_config": {
+        "inputConfig": {
           "$ref": "#/definitions/InputConfig"
         },
         "transcriptionConfig": {
@@ -20,7 +20,7 @@
         }
       },
       "required": [
-        "input_config",
+        "inputConfig",
         "outputConfig",
         "transcriptionConfig",
         "version"
@@ -75,7 +75,6 @@
         }
       },
       "required": [
-        "config",
         "format",
         "type"
       ],
@@ -118,10 +117,7 @@
         }
       },
       "required": [
-        "diarization",
-        "language",
-        "profanity",
-        "speakerSensitivity"
+        "language"
       ],
       "title": "TranscriptionConfig"
     }
