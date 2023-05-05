@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/Welcome4",
+  "$ref": "#/definitions/Welcome6",
   "definitions": {
-    "Welcome4": {
+    "Welcome6": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -24,7 +24,7 @@
         "jobProgress",
         "jobStatus"
       ],
-      "title": "Welcome4"
+      "title": "Welcome6"
     },
     "FileConfig": {
       "type": "object",
@@ -38,18 +38,38 @@
         },
         "location": {
           "type": "string"
+        },
+        "locationType": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
         }
       },
       "required": [
         "format",
         "location",
-        "type"
+        "type",
+        "locationType",
+        "message"
       ],
       "title": "FileConfig"
     },
     "JobProgress": {
       "type": "object",
       "additionalProperties": false,
+      "properties": {
+        "timeRemaining": {
+          "type": "number"
+        },
+        "percentageCompleted": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "timeRemaining",
+        "percentageCompleted"
+      ],
       "title": "JobProgress"
     }
   }
