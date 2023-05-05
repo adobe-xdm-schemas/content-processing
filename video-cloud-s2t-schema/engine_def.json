@@ -12,7 +12,7 @@
   "sensei:outputs": {
     "payload": {
       "description": "Transcript Job Output",
-      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/7e5557f67f9fe6019c09bafdd83bf830e12292d7/video-cloud-s2t-schema/transcription-output-schema.json",
+      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/81b6b29ddab8acaea6a00bffe28ba04a42e9047d/video-cloud-s2t-schema/transcription-output-schema.json",
       "sensei:type": "sensei:scalar",
       "sensei:generated_media_types": [
         "application/json"
