@@ -1,0 +1,22 @@
+{
+  "sensei:inputs": {
+    "payload": {
+      "description": "Transcript Job Input",
+      "sensei:schema": "https://raw.githubusercontent.com/adobe-xdm-schemas/content-processing/ea9001d1f95a31a85bca75b7f15153864974143d/video-cloud-s2t-schema/transcription-input-schema.json",
+      "sensei:type": "sensei:scalar",
+      "sensei:accepted_media_types": [
+        "application/json"
+      ]
+    }
+  },
+  "sensei:outputs": {
+    "payload": {
+      "description": "Transcript Job Output",
+      "sensei:schema": "https://raw.githubusercontent.com/pkagarwa/content-processing/81b6b29ddab8acaea6a00bffe28ba04a42e9047d/video-cloud-s2t-schema/transcription-output-schema.json",
+      "sensei:type": "sensei:scalar",
+      "sensei:generated_media_types": [
+        "application/json"
+      ]
+    }
+  }
+}
