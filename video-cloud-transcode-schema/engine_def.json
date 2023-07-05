@@ -1,0 +1,21 @@
+{
+  "sensei:inputs": {
+    "source_media": {
+      "description": "input is source media file",
+      "sensei:schema": "https://raw.githubusercontent.com/utkars-adobe/content-processing/aaa5f8e67c02a9a7f1b4402c84b579678300dff9/video-cloud-s2t-schema/genericJSON.json",
+      "sensei:type": "sensei:scalar"
+    },
+    "export_config": {
+      "description": "generated output",
+      "sensei:schema": "",
+      "sensei:type": "sensei:scalar"
+    }
+  },
+  "sensei:outputs": {
+    "outputs":  {
+      "description": "generated output",
+      "sensei:schema": "",
+      "sensei:type": "sensei:scalar"
+    }
+  }
+}
