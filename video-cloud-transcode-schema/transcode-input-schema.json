@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome9",
+  "definitions": {
+    "Welcome9": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "video_codec_profile": {
+          "type": "string"
+        },
+        "video_codec_level": {
+          "type": "string"
+        },
+        "video_bit_rate": {
+          "type": "string"
+        },
+        "video_decode_bit_rate": {
+          "type": "string"
+        },
+        "video_decode_buffer_size": {
+          "type": "string"
+        },
+        "video_key_frame_rate": {
+          "type": "string"
+        },
+        "video_fixed_frame_interval": {
+          "type": "string"
+        },
+        "video_max_frame_rate": {
+          "type": "string"
+        },
+        "video_resolution": {
+          "type": "string"
+        },
+        "audio_codec": {
+          "type": "string"
+        },
+        "audio_bit_rate": {
+          "type": "string"
+        },
+        "audio_sample_rate": {
+          "type": "string"
+        },
+        "audio_channel": {
+          "type": "string"
+        }
+      },
+      "title": "Welcome9"
+    }
+  }
+}
