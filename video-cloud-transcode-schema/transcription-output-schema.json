@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome10",
+  "definitions": {
+    "Welcome10": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "jobProgress": {
+          "$ref": "#/definitions/JobProgress"
+        },
+        "jobStatus": {
+          "type": "string"
+        },
+        "fileConfigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileConfig"
+          }
+        }
+      },
+      "required": [
+        "fileConfigs",
+        "jobProgress",
+        "jobStatus"
+      ],
+      "title": "Welcome10"
+    },
+    "FileConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "locationType": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "FileConfig"
+    },
+    "JobProgress": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percentageCompleted": {
+          "type": "integer"
+        }
+      },
+      "title": "JobProgress"
+    }
+  }
+}
