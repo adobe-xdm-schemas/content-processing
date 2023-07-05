@@ -1,0 +1,21 @@
+{
+  "sensei:inputs": {
+    "source_media": {
+      "description": "input is source media file",
+      "sensei:schema": "https://raw.githubusercontent.com/adobe-xdm-schemas/content-processing/d845e965c46a1957476a7372d37bc69e18cdde27/video-cloud-transcode-schema/transcode-input-schema.json",
+      "sensei:type": "sensei:scalar"
+    },
+    "export_config": {
+      "description": "generated output",
+      "sensei:schema": "",
+      "sensei:type": "sensei:scalar"
+    }
+  },
+  "sensei:outputs": {
+    "outputs":  {
+      "description": "generated output",
+      "sensei:schema": "https://raw.githubusercontent.com/adobe-xdm-schemas/content-processing/d845e965c46a1957476a7372d37bc69e18cdde27/video-cloud-transcode-schema/transcription-output-schema.json",
+      "sensei:type": "sensei:scalar"
+    }
+  }
+}
